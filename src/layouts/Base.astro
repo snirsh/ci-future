@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { title, description = 'A manifesto on the future of CI in an agentic world' } = Astro.props;
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -14,7 +15,6 @@ const { title, description = 'A manifesto on the future of CI in an agentic worl
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <link rel="stylesheet" href={`${import.meta.env.BASE_URL}styles/global.css`} />
   </head>
   <body>
     <slot />
