@@ -14,21 +14,20 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
-env:
-  COREPACK_NPM_REGISTRY: https://npm.dev.wixpress.com/
-  COREPACK_ENABLE_DOWNLOAD_PROMPT: '0'
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - name: Enable Corepack
-        run: corepack enable
-      - run: pnpm install --frozen-lockfile
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm build
       - uses: actions/upload-pages-artifact@v3
         with:
