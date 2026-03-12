@@ -14,6 +14,14 @@
   --max-width: 720px;
 }
 
+[data-theme='dark'] {
+  --color-bg: #1a1a1a;
+  --color-text: #e0e0e0;
+  --color-muted: #9a9a9a;
+  --color-accent: #e8845a;
+  --color-border: #333;
+}
+
 html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   background: var(--color-bg);
@@ -96,4 +104,25 @@ li {
 
 strong {
   font-weight: 600;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--color-border);
+  border: none;
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--color-muted);
 }
