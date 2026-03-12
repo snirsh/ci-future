@@ -1,0 +1,105 @@
+---
+interface TocItem {
+  id: string;
+  title: string;
+  children?: { id: string; title: string }[];
+}
+
+interface Props {
+  sections: TocItem[];
+}
+
+const { sections } = Astro.props;
+---
+
+<nav class="toc" aria-label="Table of contents">
+  <ul>
+    {sections.map(({ id, title, children }) => (
+      <li data-toc-group={id}>
+        <a href={`#${id}`} data-toc-link={id} class="toc-section">{title}</a>
+        {children && children.length > 0 && (
+          <ul class="toc-sub">
+            {children.map((child) => (
+              <li>
+                <a href={`#${child.id}`} data-toc-link={child.id}>{child.title}</a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function () {
+  var allIds = [];
+  document.querySelectorAll('[data-toc-link]').forEach(function (el) {
+    allIds.push(el.getAttribute('data-toc-link'));
+  });
+
+  var targets = allIds
+    .map(function (id) { return document.getElementById(id); })
+    .filter(Boolean);
+
+  var links = document.querySelectorAll('[data-toc-link]');
+  var groups = document.querySelectorAll('[data-toc-group]');
+  if (!targets.length || !links.length) return;
+
+  // Map each link id to its parent group id
+  var linkToGroup = {};
+  groups.forEach(function (g) {
+    var groupId = g.getAttribute('data-toc-group');
+    g.querySelectorAll('[data-toc-link]').forEach(function (a) {
+      linkToGroup[a.getAttribute('data-toc-link')] = groupId;
+    });
+  });
+
+  function updateActive() {
+    var current = targets[0] ? targets[0].id : null;
+    var offset = 120;
+    var atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 30);
+
+    if (atBottom) {
+      current = targets[targets.length - 1].id;
+    } else {
+      for (var i = 0; i < targets.length; i++) {
+        if (targets[i].getBoundingClientRect().top <= offset) {
+          current = targets[i].id;
+        }
+      }
+    }
+
+    var activeGroup = linkToGroup[current] || current;
+
+    links.forEach(function (link) {
+      if (link.getAttribute('data-toc-link') === current) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    groups.forEach(function (g) {
+      if (g.getAttribute('data-toc-group') === activeGroup) {
+        g.classList.add('expanded');
+      } else {
+        g.classList.remove('expanded');
+      }
+    });
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        updateActive();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  updateActive();
+});
+</script>

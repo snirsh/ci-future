@@ -9,10 +9,18 @@ lastUpdated: 2026-03-12
 
 When agents produce 10–100x more code, the human reviewer becomes the primary quality gate. But reviewing agent-generated code is fundamentally different: changes are larger, context is less familiar, and the reviewer can't rely on "I know what the author was thinking." Code review needs to evolve from line-by-line diffing to intent verification — and the tooling must keep up.
 
-**Semantic code reviewing** — Current diffs show every changed line in file order, mixing type signatures, business logic, documentation, and formatting into one undifferentiated stream. Semantic review tools should let reviewers filter by *category* of change: show only logic changes, only type changes, only comment/doc updates. This turns a 500-line diff into several focused, reviewable slices — each one answerable to a clear question ("did the types stay consistent?" vs. "does the logic match the spec?").
+### Semantic code reviewing
 
-**Stacked diffs** — A single large change can be decomposed into a chain of dependent PRs, each small enough to review meaningfully. Tools like [Graphite](https://graphite.dev/) and [ghstack](https://github.com/ezyang/ghstack) keep the entire stack rebased and in sync automatically. This reduces CI cost (each layer runs only its own tests) and makes review tractable — reviewers focus on one semantic step at a time rather than the whole transformation. See [stacked diffs vs. trunk-based development](https://stacking.dev/) for trade-offs.
+Current diffs show every changed line in file order, mixing type signatures, business logic, documentation, and formatting into one undifferentiated stream. Semantic review tools should let reviewers filter by *category* of change: show only logic changes, only type changes, only comment/doc updates. This turns a 500-line diff into several focused, reviewable slices — each one answerable to a clear question ("did the types stay consistent?" vs. "does the logic match the spec?").
 
-**Purpose-built version control** — Git was designed for human workflows: linear history, manual conflict resolution, branch management. Agent workflows need cheap forking, automatic rebasing, and conflict-free concurrent edits. Tools like [jj (Jujutsu)](https://github.com/jj-vcs/jj) offer first-class support for these patterns — anonymous branches, operation log for undo, and a simpler mental model that agents (and humans) can work with more reliably.
+### Stacked diffs
 
-**Optimized worktree workflows** — Agents working in parallel need isolated working copies. Git worktrees provide this, but each worktree traditionally requires its own `node_modules` install and cold build cache. Using content-addressable package managers like `pnpm` (which hard-links shared dependencies) and shared build/test caches across worktrees eliminates the per-worktree overhead, making parallel agent execution practical without multiplying resource costs.
+A single large change can be decomposed into a chain of dependent PRs, each small enough to review meaningfully. Tools like [Graphite](https://graphite.dev/) and [ghstack](https://github.com/ezyang/ghstack) keep the entire stack rebased and in sync automatically. This reduces CI cost (each layer runs only its own tests) and makes review tractable — reviewers focus on one semantic step at a time rather than the whole transformation. See [stacked diffs vs. trunk-based development](https://stacking.dev/) for trade-offs.
+
+### Purpose-built version control
+
+Git was designed for human workflows: linear history, manual conflict resolution, branch management. Agent workflows need cheap forking, automatic rebasing, and conflict-free concurrent edits. Tools like [jj (Jujutsu)](https://github.com/jj-vcs/jj) offer first-class support for these patterns — anonymous branches, operation log for undo, and a simpler mental model that agents (and humans) can work with more reliably.
+
+### Optimized worktree workflows
+
+Agents working in parallel need isolated working copies. Git worktrees provide this, but each worktree traditionally requires its own `node_modules` install and cold build cache. Using content-addressable package managers like `pnpm` (which hard-links shared dependencies) and shared build/test caches across worktrees eliminates the per-worktree overhead, making parallel agent execution practical without multiplying resource costs.

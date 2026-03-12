@@ -1,27 +1,40 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 
 const sections = (await getCollection('sections', ({ data }) => data.status !== 'draft'))
   .sort((a, b) => a.data.order - b.data.order);
 
 const rendered = await Promise.all(
   sections.map(async (section) => {
-    const { Content } = await render(section);
-    return { section, Content };
+    const { Content, headings } = await render(section);
+    return { section, Content, headings };
   })
 );
+
+const tocItems = rendered.map(({ section, headings }) => ({
+  id: section.id,
+  title: section.data.title,
+  children: headings
+    .filter((h) => h.depth === 3)
+    .map((h) => ({ id: h.slug, title: h.text })),
+}));
 ---
 
 <Base title="CI in an Agentic World">
-  <header>
-    <h1>CI in an Agentic World</h1>
-    <p class="subtitle">How AI agents will transform continuous integration</p>
-  </header>
+  <TableOfContents sections={tocItems} />
 
-  {rendered.map(({ section, Content }) => (
-    <section>
-      <Content />
-    </section>
-  ))}
+  <div class="content">
+    <header>
+      <h1>CI in an Agentic World</h1>
+      <p class="subtitle">How AI agents will transform continuous integration</p>
+    </header>
+
+    {rendered.map(({ section, Content }) => (
+      <section id={section.id}>
+        <Content />
+      </section>
+    ))}
+  </div>
 </Base>

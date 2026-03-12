@@ -31,9 +31,89 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3rem 1.5rem 6rem;
+}
+
+/* Table of Contents */
+.toc {
+  position: fixed;
+  top: 3rem;
+  left: max(1rem, calc((100vw - var(--max-width)) / 2 - 280px));
+  width: 220px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+
+.toc > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 1px solid var(--color-border);
+}
+
+.toc li {
+  margin-bottom: 0;
+}
+
+.toc a {
+  display: block;
+  padding: 0.25rem 0.75rem;
+  color: var(--color-muted);
+  border-left: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.toc a.toc-section {
+  font-weight: 600;
+  padding-top: 0.4rem;
+}
+
+.toc-sub {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.expanded > .toc-sub {
+  max-height: 500px;
+}
+
+.toc-sub a {
+  padding-left: 1.25rem;
+  font-size: 0.75rem;
+}
+
+.toc a:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.toc a.active {
+  color: var(--color-accent);
+  border-left-color: var(--color-accent);
+  border-left-width: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 1200px) {
+  .toc {
+    display: none;
+  }
 }
 
 h1 {

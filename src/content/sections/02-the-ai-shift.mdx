@@ -21,16 +21,26 @@ This shift shows that who really wrote the code is not human — the human is so
 
 The example also shows that with good infrastructure, you can parallelize 16 agents with validations and communication between them, which in turn allows us to write code autonomously with high confidence.
 
-### The fundamental change
+### Volume explosion
 
-**Volume explosion** — Agentic coding (Cursor, Claude Code, Copilot Workspace) means 10–100x more PRs/commits per engineer. CI infrastructure that takes 20 min/run breaks economics immediately.
+Agentic coding (Cursor, Claude Code, Copilot Workspace) means 10–100x more PRs/commits per engineer. CI infrastructure that takes 20 min/run breaks economics immediately.
 
-**Trust model inversion** — Human commits were implicitly trusted for intent. Agent commits need a new trust tier: the CI system becomes a verifier of agent output, not just a build runner.
+### Trust model inversion
 
-**Tests as the spec** — When agents write both code and tests, the spec must live elsewhere. CI needs to validate against intent (requirements, design docs) — not just pass/fail. Evals become a CI primitive.
+Human commits were implicitly trusted for intent. Agent commits need a new trust tier: the CI system becomes a verifier of agent output, not just a build runner.
 
-**Flakiness becomes critical** — A human can re-run a flaky test and use judgment. An agent in a loop will spin indefinitely or make wrong corrections. Flaky test elimination becomes a hard blocker.
+### Tests as the spec
 
-**The feedback loop IS the product** — For agents, CI feedback quality (not just speed) determines output quality. Vague "build failed" messages cause agents to hallucinate fixes. Structured, semantic error signals are now a feature.
+When agents write both code and tests, the spec must live elsewhere. CI needs to validate against intent (requirements, design docs) — not just pass/fail. Evals become a CI primitive.
 
-**Dynamic test selection** — Static "run all tests in affected packages" is too blunt. AI-powered test selection (e.g., Launchable, Currents) predicts which tests to run based on code semantics, not just file proximity.
+### Flakiness becomes critical
+
+A human can re-run a flaky test and use judgment. An agent in a loop will spin indefinitely or make wrong corrections. Flaky test elimination becomes a hard blocker.
+
+### The feedback loop IS the product
+
+For agents, CI feedback quality (not just speed) determines output quality. Vague "build failed" messages cause agents to hallucinate fixes. Structured, semantic error signals are now a feature.
+
+### Dynamic test selection
+
+Static "run all tests in affected packages" is too blunt. AI-powered test selection (e.g., Launchable, Currents) predicts which tests to run based on code semantics, not just file proximity.
