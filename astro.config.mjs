@@ -3,6 +3,6 @@ import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   integrations: [mdx()],
-  site: 'https://snirsh.github.io',
+  site: 'https://wix-private.github.io',
   base: '/ci-future',
 });
