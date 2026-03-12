@@ -17,14 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use public npm registry
-        run: echo "registry=https://registry.npmjs.org/" > .npmrc
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: pnpm
-      - run: pnpm install --no-frozen-lockfile
+      - name: Fresh install from public registry
+        run: rm -f pnpm-lock.yaml && pnpm install
       - run: pnpm build
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
