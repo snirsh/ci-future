@@ -4,10 +4,81 @@
         var t = s || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', t);
       })();
-    </script><style>*,*:before,*:after{box-sizing:border-box;margin:0}:root{--color-bg: #faf8f5;--color-text: #2c2c2c;--color-muted: #6b6b6b;--color-accent: #c45d2c;--color-border: #e0dcd7;--max-width: 720px}[data-theme=dark]{--color-bg: #1a1a1a;--color-text: #e0e0e0;--color-muted: #9a9a9a;--color-accent: #e8845a;--color-border: #333}html{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,sans-serif;background:var(--color-bg);color:var(--color-text);line-height:1.7;font-size:18px}body{max-width:var(--max-width);margin:0 auto;padding:3rem 1.5rem 6rem}h1{font-size:2.4rem;line-height:1.2;margin-bottom:.5rem;letter-spacing:-.02em}h2{font-size:1.6rem;margin-top:3rem;margin-bottom:.75rem;letter-spacing:-.01em}h3{font-size:1.2rem;margin-top:2rem;margin-bottom:.5rem}p{margin-bottom:1.25rem}blockquote{border-left:3px solid var(--color-accent);padding-left:1.25rem;margin:1.5rem 0;color:var(--color-muted);font-style:italic}a{color:var(--color-accent);text-decoration:none}a:hover{text-decoration:underline}hr{border:none;border-top:1px solid var(--color-border);margin:3rem 0}.subtitle{color:var(--color-muted);font-size:1.1rem;margin-bottom:3rem}section+section{margin-top:3rem}ul,ol{margin-bottom:1.25rem;padding-left:1.5rem}li{margin-bottom:.4rem}strong{font-weight:600}.theme-toggle{position:fixed;top:1.25rem;right:1.25rem;background:var(--color-border);border:none;border-radius:50%;width:2.25rem;height:2.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:background .2s}.theme-toggle:hover{background:var(--color-muted)}[data-astro-cid-5hce7sga][data-theme=dark] .theme-icon[data-astro-cid-5hce7sga]:after{content:"☀"}[data-astro-cid-5hce7sga][data-theme=light] .theme-icon[data-astro-cid-5hce7sga]:after,[data-astro-cid-5hce7sga]:not([data-theme]) .theme-icon[data-astro-cid-5hce7sga]:after{content:"🌙"}
-</style></head> <body data-astro-cid-5hce7sga> <button class="theme-toggle" aria-label="Toggle theme" data-astro-cid-5hce7sga> <span class="theme-icon" data-astro-cid-5hce7sga></span> </button>  <header> <h1>CI in an Agentic World</h1> <p class="subtitle">How AI agents will transform continuous integration</p> </header> <section> <h2 id="introduction">Introduction</h2>
+    </script><style>*,*:before,*:after{box-sizing:border-box;margin:0}:root{--color-bg: #faf8f5;--color-text: #2c2c2c;--color-muted: #6b6b6b;--color-accent: #c45d2c;--color-border: #e0dcd7;--max-width: 720px}[data-theme=dark]{--color-bg: #1a1a1a;--color-text: #e0e0e0;--color-muted: #9a9a9a;--color-accent: #e8845a;--color-border: #333}html{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,sans-serif;background:var(--color-bg);color:var(--color-text);line-height:1.7;font-size:18px}body{margin:0;padding:0}.content{max-width:var(--max-width);margin:0 auto;padding:3rem 1.5rem 6rem}.toc{position:fixed;top:3rem;left:max(1rem,calc((100vw - var(--max-width)) / 2 - 280px));width:220px;font-size:.8rem;line-height:1.4;max-height:calc(100vh - 6rem);overflow-y:auto}.toc>ul{list-style:none;padding:0;margin:0;border-left:1px solid var(--color-border)}.toc li{margin-bottom:0}.toc a{display:block;padding:.25rem .75rem;color:var(--color-muted);border-left:2px solid transparent;transition:color .2s,border-color .2s}.toc a.toc-section{font-weight:600;padding-top:.4rem}.toc-sub{list-style:none;padding:0;margin:0;overflow:hidden;max-height:0;transition:max-height .3s ease}.expanded>.toc-sub{max-height:500px}.toc-sub a{padding-left:1.25rem;font-size:.75rem}.toc a:hover{color:var(--color-text);text-decoration:none}.toc a.active{color:var(--color-accent);border-left-color:var(--color-accent);border-left-width:3px}html{scroll-behavior:smooth}@media(max-width:1200px){.toc{display:none}}h1{font-size:2.4rem;line-height:1.2;margin-bottom:.5rem;letter-spacing:-.02em}h2{font-size:1.6rem;margin-top:3rem;margin-bottom:.75rem;letter-spacing:-.01em}h3{font-size:1.2rem;margin-top:2rem;margin-bottom:.5rem}p{margin-bottom:1.25rem}blockquote{border-left:3px solid var(--color-accent);padding-left:1.25rem;margin:1.5rem 0;color:var(--color-muted);font-style:italic}a{color:var(--color-accent);text-decoration:none}a:hover{text-decoration:underline}hr{border:none;border-top:1px solid var(--color-border);margin:3rem 0}.subtitle{color:var(--color-muted);font-size:1.1rem;margin-bottom:3rem}section+section{margin-top:3rem}ul,ol{margin-bottom:1.25rem;padding-left:1.5rem}li{margin-bottom:.4rem}strong{font-weight:600}.theme-toggle{position:fixed;top:1.25rem;right:1.25rem;background:var(--color-border);border:none;border-radius:50%;width:2.25rem;height:2.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:background .2s}.theme-toggle:hover{background:var(--color-muted)}[data-astro-cid-5hce7sga][data-theme=dark] .theme-icon[data-astro-cid-5hce7sga]:after{content:"☀"}[data-astro-cid-5hce7sga][data-theme=light] .theme-icon[data-astro-cid-5hce7sga]:after,[data-astro-cid-5hce7sga]:not([data-theme]) .theme-icon[data-astro-cid-5hce7sga]:after{content:"🌙"}
+</style></head> <body data-astro-cid-5hce7sga> <button class="theme-toggle" aria-label="Toggle theme" data-astro-cid-5hce7sga> <span class="theme-icon" data-astro-cid-5hce7sga></span> </button>  <nav class="toc" aria-label="Table of contents"> <ul> <li data-toc-group="01-introduction"> <a href="#01-introduction" data-toc-link="01-introduction" class="toc-section">Introduction</a>  </li><li data-toc-group="02-the-ai-shift"> <a href="#02-the-ai-shift" data-toc-link="02-the-ai-shift" class="toc-section">The AI Shift</a> <ul class="toc-sub"> <li> <a href="#change-examples" data-toc-link="change-examples">Change examples</a> </li><li> <a href="#volume-explosion" data-toc-link="volume-explosion">Volume explosion</a> </li><li> <a href="#trust-model-inversion" data-toc-link="trust-model-inversion">Trust model inversion</a> </li><li> <a href="#tests-as-the-spec" data-toc-link="tests-as-the-spec">Tests as the spec</a> </li><li> <a href="#flakiness-becomes-critical" data-toc-link="flakiness-becomes-critical">Flakiness becomes critical</a> </li><li> <a href="#the-feedback-loop-is-the-product" data-toc-link="the-feedback-loop-is-the-product">The feedback loop IS the product</a> </li><li> <a href="#dynamic-test-selection" data-toc-link="dynamic-test-selection">Dynamic test selection</a> </li> </ul> </li><li data-toc-group="03-ci-architecture"> <a href="#03-ci-architecture" data-toc-link="03-ci-architecture" class="toc-section">How CI Architecture Should Look</a> <ul class="toc-sub"> <li> <a href="#continuous-testing-not-triggered-testing" data-toc-link="continuous-testing-not-triggered-testing">Continuous testing, not triggered testing</a> </li><li> <a href="#the-build-graph-as-a-live-service" data-toc-link="the-build-graph-as-a-live-service">The build graph as a live service</a> </li><li> <a href="#agent-aware-merge-queues" data-toc-link="agent-aware-merge-queues">Agent-aware merge queues</a> </li><li> <a href="#semantic-caching" data-toc-link="semantic-caching">Semantic caching</a> </li><li> <a href="#ci-as-an-ai-feedback-oracle" data-toc-link="ci-as-an-ai-feedback-oracle">CI as an AI feedback oracle</a> </li><li> <a href="#sandboxed-agent-environments" data-toc-link="sandboxed-agent-environments">Sandboxed agent environments</a> </li> </ul> </li><li data-toc-group="04-code-review"> <a href="#04-code-review" data-toc-link="04-code-review" class="toc-section">Reviewing Code Becomes Harder Yet More Critical</a> <ul class="toc-sub"> <li> <a href="#semantic-code-reviewing" data-toc-link="semantic-code-reviewing">Semantic code reviewing</a> </li><li> <a href="#stacked-diffs" data-toc-link="stacked-diffs">Stacked diffs</a> </li><li> <a href="#purpose-built-version-control" data-toc-link="purpose-built-version-control">Purpose-built version control</a> </li><li> <a href="#optimized-worktree-workflows" data-toc-link="optimized-worktree-workflows">Optimized worktree workflows</a> </li> </ul> </li> </ul> </nav> <script>
+document.addEventListener('DOMContentLoaded', function () {
+  var allIds = [];
+  document.querySelectorAll('[data-toc-link]').forEach(function (el) {
+    allIds.push(el.getAttribute('data-toc-link'));
+  });
+
+  var targets = allIds
+    .map(function (id) { return document.getElementById(id); })
+    .filter(Boolean);
+
+  var links = document.querySelectorAll('[data-toc-link]');
+  var groups = document.querySelectorAll('[data-toc-group]');
+  if (!targets.length || !links.length) return;
+
+  // Map each link id to its parent group id
+  var linkToGroup = {};
+  groups.forEach(function (g) {
+    var groupId = g.getAttribute('data-toc-group');
+    g.querySelectorAll('[data-toc-link]').forEach(function (a) {
+      linkToGroup[a.getAttribute('data-toc-link')] = groupId;
+    });
+  });
+
+  function updateActive() {
+    var current = targets[0] ? targets[0].id : null;
+    var offset = 120;
+    var atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 30);
+
+    if (atBottom) {
+      current = targets[targets.length - 1].id;
+    } else {
+      for (var i = 0; i < targets.length; i++) {
+        if (targets[i].getBoundingClientRect().top <= offset) {
+          current = targets[i].id;
+        }
+      }
+    }
+
+    var activeGroup = linkToGroup[current] || current;
+
+    links.forEach(function (link) {
+      if (link.getAttribute('data-toc-link') === current) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    groups.forEach(function (g) {
+      if (g.getAttribute('data-toc-group') === activeGroup) {
+        g.classList.add('expanded');
+      } else {
+        g.classList.remove('expanded');
+      }
+    });
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        updateActive();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  updateActive();
+});
+</script> <div class="content"> <header> <h1>CI in an Agentic World</h1> <p class="subtitle">How AI agents will transform continuous integration</p> </header> <section id="01-introduction"> <h2 id="introduction">Introduction</h2>
 <p>The world is changing rapidly nowadays with the introduction of “AI” — or more accurately, the introduction of coding agents and agentic IDEs (Claude Code, Cursor, Codex, etc.).</p>
-<p>In this article I’m going to try and ideate about the future of CI, agentic coding, validations and automation of distributed agents.</p> </section><section> <h2 id="the-ai-shift">The AI Shift</h2>
+<p>In this article I’m going to try and ideate about the future of CI, agentic coding, validations and automation of distributed agents.</p> </section><section id="02-the-ai-shift"> <h2 id="the-ai-shift">The AI Shift</h2>
 <h3 id="change-examples">Change examples</h3>
 <p>The world is changing drastically. Anthropic showed recently that they’ve managed to write a C compiler with a team of parallel Claudes:</p>
 <blockquote>
@@ -17,24 +88,39 @@
 <p>Code reviews, GitHub issue reviews, fully distributed agentic flows are becoming a <strong>must</strong> in repos and become a live engine. For example, Anthropic’s GitHub Actions in their own Claude Code repo.</p>
 <p>This shift shows that who really wrote the code is not human — the human is solely the orchestrator, and their main goal is to create a safety net that validates that their intent was executed correctly while keeping the past intent as-is.</p>
 <p>The example also shows that with good infrastructure, you can parallelize 16 agents with validations and communication between them, which in turn allows us to write code autonomously with high confidence.</p>
-<h3 id="the-fundamental-change">The fundamental change</h3>
-<p><strong>Volume explosion</strong> — Agentic coding (Cursor, Claude Code, Copilot Workspace) means 10–100x more PRs/commits per engineer. CI infrastructure that takes 20 min/run breaks economics immediately.</p>
-<p><strong>Trust model inversion</strong> — Human commits were implicitly trusted for intent. Agent commits need a new trust tier: the CI system becomes a verifier of agent output, not just a build runner.</p>
-<p><strong>Tests as the spec</strong> — When agents write both code and tests, the spec must live elsewhere. CI needs to validate against intent (requirements, design docs) — not just pass/fail. Evals become a CI primitive.</p>
-<p><strong>Flakiness becomes critical</strong> — A human can re-run a flaky test and use judgment. An agent in a loop will spin indefinitely or make wrong corrections. Flaky test elimination becomes a hard blocker.</p>
-<p><strong>The feedback loop IS the product</strong> — For agents, CI feedback quality (not just speed) determines output quality. Vague “build failed” messages cause agents to hallucinate fixes. Structured, semantic error signals are now a feature.</p>
-<p><strong>Dynamic test selection</strong> — Static “run all tests in affected packages” is too blunt. AI-powered test selection (e.g., Launchable, Currents) predicts which tests to run based on code semantics, not just file proximity.</p> </section><section> <h2 id="how-ci-architecture-should-look">How CI Architecture Should Look</h2>
-<p><strong>Continuous testing, not triggered testing</strong> — Decouple “something changed” from “run validation.” Tests run against the semantic graph continuously. A change gets a “confidence score” rather than pass/fail.</p>
-<p><strong>The build graph as a live service</strong> — Not computed per-run but maintained as a living graph (like a database). Incremental updates as files change.</p>
-<p><strong>Agent-aware merge queues</strong> — Merge queues (like Trunk, Aviator, Mergify) need to understand agent provenance. Agent PRs can be batched differently, tested more aggressively on evals, and auto-retried on infra failures.</p>
-<p><strong>Semantic caching</strong> — Beyond content-addressed caching; cache at the level of “did the observable behavior of this module change?” Type-level and runtime-behavioral equivalence as cache keys.</p>
-<p><strong>CI as an AI feedback oracle</strong> — The CI system actively returns structured feedback to the agent: which assertions failed, what the type error means, what similar past failures looked like. Not logs — structured signals.</p>
-<p><strong>Sandboxed agent environments</strong> — Each agent run gets an ephemeral, reproducible environment. Think: dev containers + hermetic builds + snapshot testing of side effects. The environment is part of the artifact.</p> </section><section> <h2 id="reviewing-code-becomes-harder-yet-more-critical">Reviewing Code Becomes Harder Yet More Critical</h2>
+<h3 id="volume-explosion">Volume explosion</h3>
+<p>Agentic coding (Cursor, Claude Code, Copilot Workspace) means 10–100x more PRs/commits per engineer. CI infrastructure that takes 20 min/run breaks economics immediately.</p>
+<h3 id="trust-model-inversion">Trust model inversion</h3>
+<p>Human commits were implicitly trusted for intent. Agent commits need a new trust tier: the CI system becomes a verifier of agent output, not just a build runner.</p>
+<h3 id="tests-as-the-spec">Tests as the spec</h3>
+<p>When agents write both code and tests, the spec must live elsewhere. CI needs to validate against intent (requirements, design docs) — not just pass/fail. Evals become a CI primitive.</p>
+<h3 id="flakiness-becomes-critical">Flakiness becomes critical</h3>
+<p>A human can re-run a flaky test and use judgment. An agent in a loop will spin indefinitely or make wrong corrections. Flaky test elimination becomes a hard blocker.</p>
+<h3 id="the-feedback-loop-is-the-product">The feedback loop IS the product</h3>
+<p>For agents, CI feedback quality (not just speed) determines output quality. Vague “build failed” messages cause agents to hallucinate fixes. Structured, semantic error signals are now a feature.</p>
+<h3 id="dynamic-test-selection">Dynamic test selection</h3>
+<p>Static “run all tests in affected packages” is too blunt. AI-powered test selection (e.g., Launchable, Currents) predicts which tests to run based on code semantics, not just file proximity.</p> </section><section id="03-ci-architecture"> <h2 id="how-ci-architecture-should-look">How CI Architecture Should Look</h2>
+<h3 id="continuous-testing-not-triggered-testing">Continuous testing, not triggered testing</h3>
+<p>Decouple “something changed” from “run validation.” Tests run against the semantic graph continuously. A change gets a “confidence score” rather than pass/fail.</p>
+<h3 id="the-build-graph-as-a-live-service">The build graph as a live service</h3>
+<p>Not computed per-run but maintained as a living graph (like a database). Incremental updates as files change.</p>
+<h3 id="agent-aware-merge-queues">Agent-aware merge queues</h3>
+<p>Merge queues (like Trunk, Aviator, Mergify) need to understand agent provenance. Agent PRs can be batched differently, tested more aggressively on evals, and auto-retried on infra failures.</p>
+<h3 id="semantic-caching">Semantic caching</h3>
+<p>Beyond content-addressed caching; cache at the level of “did the observable behavior of this module change?” Type-level and runtime-behavioral equivalence as cache keys.</p>
+<h3 id="ci-as-an-ai-feedback-oracle">CI as an AI feedback oracle</h3>
+<p>The CI system actively returns structured feedback to the agent: which assertions failed, what the type error means, what similar past failures looked like. Not logs — structured signals.</p>
+<h3 id="sandboxed-agent-environments">Sandboxed agent environments</h3>
+<p>Each agent run gets an ephemeral, reproducible environment. Think: dev containers + hermetic builds + snapshot testing of side effects. The environment is part of the artifact.</p> </section><section id="04-code-review"> <h2 id="reviewing-code-becomes-harder-yet-more-critical">Reviewing Code Becomes Harder Yet More Critical</h2>
 <p>When agents produce 10–100x more code, the human reviewer becomes the primary quality gate. But reviewing agent-generated code is fundamentally different: changes are larger, context is less familiar, and the reviewer can’t rely on “I know what the author was thinking.” Code review needs to evolve from line-by-line diffing to intent verification — and the tooling must keep up.</p>
-<p><strong>Semantic code reviewing</strong> — Current diffs show every changed line in file order, mixing type signatures, business logic, documentation, and formatting into one undifferentiated stream. Semantic review tools should let reviewers filter by <em>category</em> of change: show only logic changes, only type changes, only comment/doc updates. This turns a 500-line diff into several focused, reviewable slices — each one answerable to a clear question (“did the types stay consistent?” vs. “does the logic match the spec?”).</p>
-<p><strong>Stacked diffs</strong> — A single large change can be decomposed into a chain of dependent PRs, each small enough to review meaningfully. Tools like <a href="https://graphite.dev/">Graphite</a> and <a href="https://github.com/ezyang/ghstack">ghstack</a> keep the entire stack rebased and in sync automatically. This reduces CI cost (each layer runs only its own tests) and makes review tractable — reviewers focus on one semantic step at a time rather than the whole transformation. See <a href="https://stacking.dev/">stacked diffs vs. trunk-based development</a> for trade-offs.</p>
-<p><strong>Purpose-built version control</strong> — Git was designed for human workflows: linear history, manual conflict resolution, branch management. Agent workflows need cheap forking, automatic rebasing, and conflict-free concurrent edits. Tools like <a href="https://github.com/jj-vcs/jj">jj (Jujutsu)</a> offer first-class support for these patterns — anonymous branches, operation log for undo, and a simpler mental model that agents (and humans) can work with more reliably.</p>
-<p><strong>Optimized worktree workflows</strong> — Agents working in parallel need isolated working copies. Git worktrees provide this, but each worktree traditionally requires its own <code>node_modules</code> install and cold build cache. Using content-addressable package managers like <code>pnpm</code> (which hard-links shared dependencies) and shared build/test caches across worktrees eliminates the per-worktree overhead, making parallel agent execution practical without multiplying resource costs.</p> </section> <script>
+<h3 id="semantic-code-reviewing">Semantic code reviewing</h3>
+<p>Current diffs show every changed line in file order, mixing type signatures, business logic, documentation, and formatting into one undifferentiated stream. Semantic review tools should let reviewers filter by <em>category</em> of change: show only logic changes, only type changes, only comment/doc updates. This turns a 500-line diff into several focused, reviewable slices — each one answerable to a clear question (“did the types stay consistent?” vs. “does the logic match the spec?”).</p>
+<h3 id="stacked-diffs">Stacked diffs</h3>
+<p>A single large change can be decomposed into a chain of dependent PRs, each small enough to review meaningfully. Tools like <a href="https://graphite.dev/">Graphite</a> and <a href="https://github.com/ezyang/ghstack">ghstack</a> keep the entire stack rebased and in sync automatically. This reduces CI cost (each layer runs only its own tests) and makes review tractable — reviewers focus on one semantic step at a time rather than the whole transformation. See <a href="https://stacking.dev/">stacked diffs vs. trunk-based development</a> for trade-offs.</p>
+<h3 id="purpose-built-version-control">Purpose-built version control</h3>
+<p>Git was designed for human workflows: linear history, manual conflict resolution, branch management. Agent workflows need cheap forking, automatic rebasing, and conflict-free concurrent edits. Tools like <a href="https://github.com/jj-vcs/jj">jj (Jujutsu)</a> offer first-class support for these patterns — anonymous branches, operation log for undo, and a simpler mental model that agents (and humans) can work with more reliably.</p>
+<h3 id="optimized-worktree-workflows">Optimized worktree workflows</h3>
+<p>Agents working in parallel need isolated working copies. Git worktrees provide this, but each worktree traditionally requires its own <code>node_modules</code> install and cold build cache. Using content-addressable package managers like <code>pnpm</code> (which hard-links shared dependencies) and shared build/test caches across worktrees eliminates the per-worktree overhead, making parallel agent execution practical without multiplying resource costs.</p> </section> </div>  <script>
       (function () {
         const saved = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
