@@ -1,0 +1,36 @@
+---
+title: "The AI Shift"
+order: 2
+status: published
+lastUpdated: 2026-03-12
+---
+
+## The AI Shift
+
+### Change examples
+
+The world is changing drastically. Anthropic showed recently that they've managed to write a C compiler with a team of parallel Claudes:
+
+> "16 agents writing a Rust-based C compiler, from scratch, capable of compiling the Linux kernel. Over nearly 2,000 Claude Code sessions and $20,000 in API costs, the agent team produced a 100,000-line compiler that can build Linux 6.9 on x86, ARM, and RISC-V."
+
+Or businesses run only by distributed agents, such as Paperclip (orchestrator) or spec-driven development (spec-kit) which allows humans to define the project as specs and then later orchestrate AI agents in order to implement it.
+
+Code reviews, GitHub issue reviews, fully distributed agentic flows are becoming a **must** in repos and become a live engine. For example, Anthropic's GitHub Actions in their own Claude Code repo.
+
+This shift shows that who really wrote the code is not human — the human is solely the orchestrator, and their main goal is to create a safety net that validates that their intent was executed correctly while keeping the past intent as-is.
+
+The example also shows that with good infrastructure, you can parallelize 16 agents with validations and communication between them, which in turn allows us to write code autonomously with high confidence.
+
+### The fundamental change
+
+**Volume explosion** — Agentic coding (Cursor, Claude Code, Copilot Workspace) means 10–100x more PRs/commits per engineer. CI infrastructure that takes 20 min/run breaks economics immediately.
+
+**Trust model inversion** — Human commits were implicitly trusted for intent. Agent commits need a new trust tier: the CI system becomes a verifier of agent output, not just a build runner.
+
+**Tests as the spec** — When agents write both code and tests, the spec must live elsewhere. CI needs to validate against intent (requirements, design docs) — not just pass/fail. Evals become a CI primitive.
+
+**Flakiness becomes critical** — A human can re-run a flaky test and use judgment. An agent in a loop will spin indefinitely or make wrong corrections. Flaky test elimination becomes a hard blocker.
+
+**The feedback loop IS the product** — For agents, CI feedback quality (not just speed) determines output quality. Vague "build failed" messages cause agents to hallucinate fixes. Structured, semantic error signals are now a feature.
+
+**Dynamic test selection** — Static "run all tests in affected packages" is too blunt. AI-powered test selection (e.g., Launchable, Currents) predicts which tests to run based on code semantics, not just file proximity.

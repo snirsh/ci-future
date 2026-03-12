@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const sections = (await getCollection('sections', ({ data }) => data.status !== 'draft'))
+  .sort((a, b) => a.data.order - b.data.order);
+
+const rendered = await Promise.all(
+  sections.map(async (section) => {
+    const { Content } = await render(section);
+    return { section, Content };
+  })
+);
+---
+
+<Base title="CI in an Agentic World">
+  <header>
+    <h1>CI in an Agentic World</h1>
+    <p class="subtitle">How AI agents will transform continuous integration</p>
+  </header>
+
+  {rendered.map(({ section, Content }) => (
+    <section>
+      <Content />
+    </section>
+  ))}
+</Base>
