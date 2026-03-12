@@ -1,5 +1,11 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A manifesto on the future of CI in an agentic world"><title>CI in an Agentic World</title><style>*,*:before,*:after{box-sizing:border-box;margin:0}:root{--color-bg: #faf8f5;--color-text: #2c2c2c;--color-muted: #6b6b6b;--color-accent: #c45d2c;--color-border: #e0dcd7;--max-width: 720px}html{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,sans-serif;background:var(--color-bg);color:var(--color-text);line-height:1.7;font-size:18px}body{max-width:var(--max-width);margin:0 auto;padding:3rem 1.5rem 6rem}h1{font-size:2.4rem;line-height:1.2;margin-bottom:.5rem;letter-spacing:-.02em}h2{font-size:1.6rem;margin-top:3rem;margin-bottom:.75rem;letter-spacing:-.01em}h3{font-size:1.2rem;margin-top:2rem;margin-bottom:.5rem}p{margin-bottom:1.25rem}blockquote{border-left:3px solid var(--color-accent);padding-left:1.25rem;margin:1.5rem 0;color:var(--color-muted);font-style:italic}a{color:var(--color-accent);text-decoration:none}a:hover{text-decoration:underline}hr{border:none;border-top:1px solid var(--color-border);margin:3rem 0}.subtitle{color:var(--color-muted);font-size:1.1rem;margin-bottom:3rem}section+section{margin-top:3rem}ul,ol{margin-bottom:1.25rem;padding-left:1.5rem}li{margin-bottom:.4rem}strong{font-weight:600}
-</style></head> <body>  <header> <h1>CI in an Agentic World</h1> <p class="subtitle">How AI agents will transform continuous integration</p> </header> <section> <h2 id="introduction">Introduction</h2>
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A manifesto on the future of CI in an agentic world"><title>CI in an Agentic World</title><script>
+      (function () {
+        var s = localStorage.getItem('theme');
+        var t = s || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script><style>*,*:before,*:after{box-sizing:border-box;margin:0}:root{--color-bg: #faf8f5;--color-text: #2c2c2c;--color-muted: #6b6b6b;--color-accent: #c45d2c;--color-border: #e0dcd7;--max-width: 720px}[data-theme=dark]{--color-bg: #1a1a1a;--color-text: #e0e0e0;--color-muted: #9a9a9a;--color-accent: #e8845a;--color-border: #333}html{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,sans-serif;background:var(--color-bg);color:var(--color-text);line-height:1.7;font-size:18px}body{max-width:var(--max-width);margin:0 auto;padding:3rem 1.5rem 6rem}h1{font-size:2.4rem;line-height:1.2;margin-bottom:.5rem;letter-spacing:-.02em}h2{font-size:1.6rem;margin-top:3rem;margin-bottom:.75rem;letter-spacing:-.01em}h3{font-size:1.2rem;margin-top:2rem;margin-bottom:.5rem}p{margin-bottom:1.25rem}blockquote{border-left:3px solid var(--color-accent);padding-left:1.25rem;margin:1.5rem 0;color:var(--color-muted);font-style:italic}a{color:var(--color-accent);text-decoration:none}a:hover{text-decoration:underline}hr{border:none;border-top:1px solid var(--color-border);margin:3rem 0}.subtitle{color:var(--color-muted);font-size:1.1rem;margin-bottom:3rem}section+section{margin-top:3rem}ul,ol{margin-bottom:1.25rem;padding-left:1.5rem}li{margin-bottom:.4rem}strong{font-weight:600}.theme-toggle{position:fixed;top:1.25rem;right:1.25rem;background:var(--color-border);border:none;border-radius:50%;width:2.25rem;height:2.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:background .2s}.theme-toggle:hover{background:var(--color-muted)}[data-astro-cid-5hce7sga][data-theme=dark] .theme-icon[data-astro-cid-5hce7sga]:after{content:"☀"}[data-astro-cid-5hce7sga][data-theme=light] .theme-icon[data-astro-cid-5hce7sga]:after,[data-astro-cid-5hce7sga]:not([data-theme]) .theme-icon[data-astro-cid-5hce7sga]:after{content:"🌙"}
+</style></head> <body data-astro-cid-5hce7sga> <button class="theme-toggle" aria-label="Toggle theme" data-astro-cid-5hce7sga> <span class="theme-icon" data-astro-cid-5hce7sga></span> </button>  <header> <h1>CI in an Agentic World</h1> <p class="subtitle">How AI agents will transform continuous integration</p> </header> <section> <h2 id="introduction">Introduction</h2>
 <p>The world is changing rapidly nowadays with the introduction of “AI” — or more accurately, the introduction of coding agents and agentic IDEs (Claude Code, Cursor, Codex, etc.).</p>
 <p>In this article I’m going to try and ideate about the future of CI, agentic coding, validations and automation of distributed agents.</p> </section><section> <h2 id="the-ai-shift">The AI Shift</h2>
 <h3 id="change-examples">Change examples</h3>
@@ -23,4 +29,18 @@
 <p><strong>Agent-aware merge queues</strong> — Merge queues (like Trunk, Aviator, Mergify) need to understand agent provenance. Agent PRs can be batched differently, tested more aggressively on evals, and auto-retried on infra failures.</p>
 <p><strong>Semantic caching</strong> — Beyond content-addressed caching; cache at the level of “did the observable behavior of this module change?” Type-level and runtime-behavioral equivalence as cache keys.</p>
 <p><strong>CI as an AI feedback oracle</strong> — The CI system actively returns structured feedback to the agent: which assertions failed, what the type error means, what similar past failures looked like. Not logs — structured signals.</p>
-<p><strong>Sandboxed agent environments</strong> — Each agent run gets an ephemeral, reproducible environment. Think: dev containers + hermetic builds + snapshot testing of side effects. The environment is part of the artifact.</p> </section> </body></html>
+<p><strong>Sandboxed agent environments</strong> — Each agent run gets an ephemeral, reproducible environment. Think: dev containers + hermetic builds + snapshot testing of side effects. The environment is part of the artifact.</p> </section> <script>
+      (function () {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+
+        document.querySelector('.theme-toggle').addEventListener('click', function () {
+          const current = document.documentElement.getAttribute('data-theme');
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+        });
+      })();
+    </script>  </body> </html>
