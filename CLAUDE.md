@@ -37,6 +37,18 @@ lastUpdated: 2026-03-12
 - **Tone:** Thought-leadership, clear and direct
 
 ## Adding a New Section
+
+### Via CLI script
+```bash
+pnpm new-section "Section Title"           # creates draft
+pnpm new-section "Section Title" --status=review  # creates with specific status
+```
+This auto-detects the next order number, generates the slug, and creates the MDX file with correct frontmatter.
+
+### Via Claude Code skill
+Use `/new-section` — it will scaffold the file and optionally draft content that matches the manifesto's voice and narrative flow.
+
+### Manually
 1. Create `src/content/sections/NN-slug.mdx` with frontmatter
 2. Set `status: draft` and `order` to the next number
 3. Write content in MDX
