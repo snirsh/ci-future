@@ -7,14 +7,26 @@ lastUpdated: 2026-03-12
 
 ## How CI Architecture Should Look
 
-**Continuous testing, not triggered testing** — Decouple "something changed" from "run validation." Tests run against the semantic graph continuously. A change gets a "confidence score" rather than pass/fail.
+### Continuous testing, not triggered testing
 
-**The build graph as a live service** — Not computed per-run but maintained as a living graph (like a database). Incremental updates as files change.
+Decouple "something changed" from "run validation." Tests run against the semantic graph continuously. A change gets a "confidence score" rather than pass/fail.
 
-**Agent-aware merge queues** — Merge queues (like Trunk, Aviator, Mergify) need to understand agent provenance. Agent PRs can be batched differently, tested more aggressively on evals, and auto-retried on infra failures.
+### The build graph as a live service
 
-**Semantic caching** — Beyond content-addressed caching; cache at the level of "did the observable behavior of this module change?" Type-level and runtime-behavioral equivalence as cache keys.
+Not computed per-run but maintained as a living graph (like a database). Incremental updates as files change.
 
-**CI as an AI feedback oracle** — The CI system actively returns structured feedback to the agent: which assertions failed, what the type error means, what similar past failures looked like. Not logs — structured signals.
+### Agent-aware merge queues
 
-**Sandboxed agent environments** — Each agent run gets an ephemeral, reproducible environment. Think: dev containers + hermetic builds + snapshot testing of side effects. The environment is part of the artifact.
+Merge queues (like Trunk, Aviator, Mergify) need to understand agent provenance. Agent PRs can be batched differently, tested more aggressively on evals, and auto-retried on infra failures.
+
+### Semantic caching
+
+Beyond content-addressed caching; cache at the level of "did the observable behavior of this module change?" Type-level and runtime-behavioral equivalence as cache keys.
+
+### CI as an AI feedback oracle
+
+The CI system actively returns structured feedback to the agent: which assertions failed, what the type error means, what similar past failures looked like. Not logs — structured signals.
+
+### Sandboxed agent environments
+
+Each agent run gets an ephemeral, reproducible environment. Think: dev containers + hermetic builds + snapshot testing of side effects. The environment is part of the artifact.
