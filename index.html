@@ -80,12 +80,12 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>The world is changing rapidly nowadays with the introduction of “AI” — or more accurately, the introduction of coding agents and agentic IDEs (Claude Code, Cursor, Codex, etc.).</p>
 <p>In this article I’m going to try and ideate about the future of CI, agentic coding, validations and automation of distributed agents.</p> </section><section id="02-the-ai-shift"> <h2 id="the-ai-shift">The AI Shift</h2>
 <h3 id="change-examples">Change examples</h3>
-<p>The world is changing drastically. Anthropic showed recently that they’ve managed to write a C compiler with a team of parallel Claudes:</p>
+<p>The world is changing drastically. Anthropic showed recently that they’ve managed to write <a href="https://www.anthropic.com/engineering/building-c-compiler">a C compiler with a team of parallel Claudes</a>:</p>
 <blockquote>
 <p>“16 agents writing a Rust-based C compiler, from scratch, capable of compiling the Linux kernel. Over nearly 2,000 Claude Code sessions and $20,000 in API costs, the agent team produced a 100,000-line compiler that can build Linux 6.9 on x86, ARM, and RISC-V.”</p>
 </blockquote>
-<p>Or businesses run only by distributed agents, such as Paperclip (orchestrator) or spec-driven development (spec-kit) which allows humans to define the project as specs and then later orchestrate AI agents in order to implement it.</p>
-<p>Code reviews, GitHub issue reviews, fully distributed agentic flows are becoming a <strong>must</strong> in repos and become a live engine. For example, Anthropic’s GitHub Actions in their own Claude Code repo.</p>
+<p>Or businesses run only by distributed agents, such as <a href="https://github.com/paperclipai/paperclip">Paperclip</a> (orchestrator) or spec-driven development (<a href="https://github.com/github/spec-kit">spec-kit</a>) which allows humans to define the project as specs and then later orchestrate AI agents in order to implement it.</p>
+<p>Code reviews, GitHub issue reviews, fully distributed agentic flows are becoming a <strong>must</strong> in repos and become a live engine. For example, <a href="https://github.com/anthropics/claude-code/tree/main/.github/workflows">Anthropic’s GitHub Actions in their own Claude Code repo</a>.</p>
 <p>This shift shows that who really wrote the code is not human — the human is solely the orchestrator, and their main goal is to create a safety net that validates that their intent was executed correctly while keeping the past intent as-is.</p>
 <p>The example also shows that with good infrastructure, you can parallelize 16 agents with validations and communication between them, which in turn allows us to write code autonomously with high confidence.</p>
 <h3 id="volume-explosion">Volume explosion</h3>
