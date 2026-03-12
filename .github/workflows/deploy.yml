@@ -17,6 +17,7 @@ concurrency:
 env:
   COREPACK_NPM_REGISTRY: https://npm.dev.wixpress.com/
   COREPACK_ENABLE_DOWNLOAD_PROMPT: '0'
+  COREPACK_INTEGRITY_KEYS: '0'
 
 jobs:
   build:
