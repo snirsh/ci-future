@@ -81,17 +81,13 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.25s ease;
-}
-
-.toc-sub > li {
   overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
 }
 
 .expanded > .toc-sub {
-  grid-template-rows: 1fr;
+  max-height: 500px;
 }
 
 .toc-sub a {
